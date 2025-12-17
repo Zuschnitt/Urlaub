@@ -13,15 +13,6 @@
     /* Sonntage */
     .sunday { background-color: #ffe6e6; }
 
-    /* Mitarbeiterfarben */
-    .employee1 { background-color: #FF0000; color: white; }
-    .employee2 { background-color: #707070; color: white; }
-    .employee3 { background-color: #D1D1D1; color: white; }
-    .employee4 { background-color: #FF8400; color: white; }
-    .employee5 { background-color: #FBFF00; color: black; }
-    .employee6 { background-color: #00FFFF; color: black; }
-    .employee7 { background-color: #0044B3; color: white; }
-
     /* Legende */
     .legend { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
     .legend-item { display: flex; align-items: center; gap: 5px; font-size: 13px; }
@@ -39,13 +30,13 @@
 
   <!-- Legende -->
   <div class="legend">
-    <div class="legend-item"><div class="legend-color employee1"></div> Steven</div>
-    <div class="legend-item"><div class="legend-color employee2"></div> Manfred</div>
-    <div class="legend-item"><div class="legend-color employee3"></div> Albion</div>
-    <div class="legend-item"><div class="legend-color employee4"></div> Andreas</div>
-    <div class="legend-item"><div class="legend-color employee5"></div> Norman</div>
-    <div class="legend-item"><div class="legend-color employee6"></div> Toni</div>
-    <div class="legend-item"><div class="legend-color employee7"></div> Marcello</div>
+    <div class="legend-item"><div class="legend-color" style="background:#FF0000"></div> Steven</div>
+    <div class="legend-item"><div class="legend-color" style="background:#707070"></div> Manfred</div>
+    <div class="legend-item"><div class="legend-color" style="background:#D1D1D1"></div> Albion</div>
+    <div class="legend-item"><div class="legend-color" style="background:#FF8400"></div> Andreas</div>
+    <div class="legend-item"><div class="legend-color" style="background:#FBFF00"></div> Norman</div>
+    <div class="legend-item"><div class="legend-color" style="background:#00FFFF"></div> Toni</div>
+    <div class="legend-item"><div class="legend-color" style="background:#0044B3"></div> Marcello</div>
   </div>
 
   <table id="calendar">
@@ -63,6 +54,19 @@
     const year = 2026;
     const months = 12;
     let vacations = {};
+
+    // Farben nach Namen
+    function getColorByName(name) {
+      switch(name) {
+        case "Steven": return "#FF0000";
+        case "Manfred": return "#707070";
+        case "Albion": return "#D1D1D1";
+        case "Andreas": return "#FF8400";
+        case "Norman": return "#FBFF00";
+        case "Toni": return "#00FFFF";
+        case "Marcello": return "#0044B3";
+      }
+    }
 
     async function loadVacations() {
       try {
@@ -107,18 +111,7 @@
 
             // Urlaub farbig markieren mit Gradient
             if (vacations[dateStr]) {
-              const colors = vacations[dateStr].map(v => {
-                switch(v.employee) {
-                  case "employee1": return "#FF0000";
-                  case "employee2": return "#707070";
-                  case "employee3": return "#D1D1D1";
-                  case "employee4": return "#FF8400";
-                  case "employee5": return "#FBFF00";
-                  case "employee6": return "#00FFFF";
-                  case "employee7": return "#0044B3";
-                }
-              });
-
+              const colors = vacations[dateStr].map(v => getColorByName(v.employee));
               const step = 100 / colors.length;
               let gradient = "";
               colors.forEach((c, i) => {

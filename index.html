@@ -26,6 +26,12 @@
       .print-btn { display: none !important; }
       body { margin: 0; }
       @page { size: A4 landscape; margin: 10mm; }
+
+      /* Farben im Druck erzwingen */
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
     }
   </style>
 </head>

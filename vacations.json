@@ -20,16 +20,19 @@
   
   { "employee": "Norman", "start": "2026-01-23", "end": "2026-01-29" },
   { "employee": "Norman", "start": "2026-03-09", "end": "2026-03-21" },
-  { "employee": "Norman", "start": "2026-07-27", "end": "2026-08-01" },
+  { "employee": "Norman", "start": "2026-07-27", "end": "2026-07-31" },
+  { "employee": "Norman", "start": "2026-08-01", "end": "2026-08-01" },
   { "employee": "Norman", "start": "2026-10-05", "end": "2026-10-10" },
   { "employee": "Norman", "start": "2026-11-02", "end": "2026-11-07" },
   
-  { "employee": "Toni", "start": "2026-03-30", "end": "2026-04-04" },
+  { "employee": "Toni", "start": "2026-03-30", "end": "2026-03-31" },
+  { "employee": "Toni", "start": "2026-04-01", "end": "2026-04-04" },
   { "employee": "Toni", "start": "2026-06-01", "end": "2026-06-06" },
   { "employee": "Toni", "start": "2026-12-28", "end": "2026-12-31" },
   
   { "employee": "Marcello", "start": "2026-01-02", "end": "2026-01-10" }
 ]
+
 
 
 

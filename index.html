@@ -77,6 +77,7 @@
         case "Norman": return "#FBFF00";
         case "Toni": return "#00FFFF";
         case "Marcello": return "#0044B3";
+        default: return "#FFFFFF";
       }
     }
 
@@ -124,15 +125,17 @@
             // Urlaub farbig markieren mit Gradient
             if (vacations[dateStr]) {
               const colors = vacations[dateStr].map(v => getColorByName(v.employee));
-              const step = 100 / colors.length;
-              let gradient = "";
-              colors.forEach((c, i) => {
-                const start = i * step;
-                const end = (i+1) * step;
-                gradient += `${c} ${start}% ${end}%, `;
-              });
-              gradient = gradient.slice(0, -2);
-              cell.style.background = `linear-gradient(to bottom, ${gradient})`;
+              if (colors.length > 0) {
+                const step = 100 / colors.length;
+                let gradient = "";
+                colors.forEach((c, i) => {
+                  const start = i * step;
+                  const end = (i+1) * step;
+                  gradient += `${c} ${start}% ${end}%, `;
+                });
+                gradient = gradient.slice(0, -2);
+                cell.style.background = `linear-gradient(to bottom, ${gradient})`;
+              }
             }
           } else {
             cell.textContent = "";

@@ -14,6 +14,8 @@
   
   { "employee": "Albion", "start": "2026-03-23", "end": "2026-03-28" },
   { "employee": "Albion", "start": "2026-08-01", "end": "2026-08-22" },
+  { "employee": "Albion", "start": "2026-11-23", "end": "2026-11-30" },
+  { "employee": "Albion", "start": "2026-12-01", "end": "2026-12-05" },
   
   { "employee": "Andreas", "start": "2026-02-16", "end": "2026-02-21" },
   { "employee": "Andreas", "start": "2026-04-13", "end": "2026-04-25" },
@@ -44,6 +46,7 @@
   { "employee": "Marcello", "start": "2026-05-01", "end": "2026-05-09" },
   { "employee": "Marcello", "start": "2026-11-09", "end": "2026-11-21" }
 ]
+
 
 
 
